@@ -1,5 +1,5 @@
 const initialState = {
-  userOauth: 'authenticated',
+  userOauth: null,
   foods: [],
   calories: [],
 };
