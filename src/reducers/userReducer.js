@@ -1,11 +1,10 @@
 const initialState = {
-  user: {
-    foods: [],
-    calories: [],
-  },
+  userOauth: null,
+  foods: [],
+  calories: [],
 };
 
-const userReducer = (state = initialState.user, action) => {
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'FETCH-USER-FOOD':
       return {
@@ -16,6 +15,11 @@ const userReducer = (state = initialState.user, action) => {
       return {
         ...state,
         calories: action.payload,
+      };
+    case 'LOG-USER':
+      return {
+        ...state,
+        userOauth: action.payload,
       };
     default:
       return state;
