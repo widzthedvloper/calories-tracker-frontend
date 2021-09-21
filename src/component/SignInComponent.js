@@ -1,16 +1,9 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react/button-has-type */
+/* eslint-disable no-console */
 import React, { useState } from 'react';
 
-function SignInComponent() {
+const SignInComponent = () => {
   const [btnName, setBtnName] = useState('Sign In');
-
-  if (document.querySelector('.In')) {
-    document.querySelector('.In').addEventListener('click', () => { });
-  }
-
-  if (document.querySelector('.Up')) {
-    document.querySelector('.Up').addEventListener('click', () => { });
-  }
 
   if (document.querySelector('.sign-up')) {
     document.querySelector('.sign-up').addEventListener('click', () => {
@@ -33,11 +26,12 @@ function SignInComponent() {
           Password Confirmation
           <input id="password-confirmation" type="email" placeholder="user@email.com" />
         </label>
-        <button type="submit" className={btnName}>{btnName}</button>
-        <a href="#" className="sign-up">Create a new account</a>
+        <button className={btnName}>{btnName}</button>
+        <a href="/" className="sign-up">Create a new account</a>
+        <a href="/" className="sign-in">Sign In</a>
       </form>
     </div>
   );
-}
+};
 
 export default SignInComponent;
