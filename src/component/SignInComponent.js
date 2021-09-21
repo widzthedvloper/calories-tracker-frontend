@@ -4,7 +4,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import checkUser from '../action';
+import { checkUser } from '../action';
 
 const SignInComponent = () => {
   const [email, setEmail] = useState('');
