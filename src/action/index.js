@@ -1,4 +1,4 @@
-import logUser from '../API/api';
+import { logUser, createUser } from '../API/api';
 
 const checkUser = (user) => async (dispatch) => {
   const payload = await logUser(user);
@@ -7,4 +7,11 @@ const checkUser = (user) => async (dispatch) => {
   );
 };
 
-export default checkUser;
+const registerUser = (user) => async (dispatch) => {
+  const payload = await createUser(user);
+  dispatch(
+    { type: 'SIGN-USER', payload },
+  );
+};
+
+export { checkUser, registerUser };
