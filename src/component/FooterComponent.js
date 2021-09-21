@@ -1,6 +1,6 @@
 import React from 'react';
 
-function FooterComponenet() {
+function FooterComponent() {
   return (
     <div className="footer-nav">
       <div className="nav-item">
@@ -19,4 +19,4 @@ function FooterComponenet() {
   );
 }
 
-export default FooterComponenet;
+export default FooterComponent;

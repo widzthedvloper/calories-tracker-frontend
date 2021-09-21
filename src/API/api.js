@@ -1,4 +1,4 @@
-const logUser = async (username, password) => {
+const logUser = async (user) => {
   try {
     const response = await fetch('https://fierce-escarpment-48376.herokuapp.com/auth/login', {
       method: 'POST',
@@ -6,7 +6,7 @@ const logUser = async (username, password) => {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      body: JSON.stringify(username, password),
+      body: JSON.stringify(user),
     });
     return response.json();
   } catch (error) {

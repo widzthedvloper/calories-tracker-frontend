@@ -1,35 +1,23 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
-import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import HeadComponent from './component/HeadComponent';
-import FooterComponent from './component/FooterComponenet';
-import SignInComponent from './component/SignInComponent';
+import FooterComponent from './component/FooterComponent';
 
 const mapState = (state) => ({
-  userOauth: state.user.userOauth,
+  userOauth: state.user.auth_token,
 });
 
 function App({ userOauth }) {
-  if (userOauth === null) {
-    return (
-      <Router>
-        <div className="App">
-          <Switch>
-            <Route path="/" component={SignInComponent} exact />
-          </Switch>
-        </div>
-      </Router>
-    );
-  }
   return (
-    <div className="App">
+    <>
       <HeadComponent />
-      Data form Redux:
-      {' '}
-      {userOauth}
+      <h1>
+        You made it to the main page:
+        {userOauth}
+      </h1>
       <FooterComponent />
-    </div>
+    </>
   );
 }
 

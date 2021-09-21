@@ -1,35 +1,44 @@
-/* eslint-disable react/button-has-type */
-/* eslint-disable no-console */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
-import logUser from '../API/api';
+import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import checkUser from '../action';
 
 const SignInComponent = () => {
-  const [btnName, setBtnName] = useState('Sign In');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const history = useHistory();
+  const dispatch = useDispatch();
 
-  if (document.querySelector('.sign-up')) {
-    document.querySelector('.sign-up').addEventListener('click', () => {
-      setBtnName('Sign Up');
-    });
-  }
+  const grabEmail = (emailInput) => {
+    setEmail(emailInput);
+  };
+
+  const grabPassword = (passwordInput) => {
+    setPassword(passwordInput);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(checkUser({ email, password }));
+    history.push('/App');
+  };
 
   return (
     <div className="form-confirmation">
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="email">
           Email
-          <input id="email" type="email" placeholder="user@email.com" />
+          <input onChange={(e) => grabEmail(e.target.value)} id="email" type="email" value={email} placeholder="user@email.com" />
         </label>
         <label htmlFor="password">
           Password
-          <input id="password" type="password" placeholder="******" />
+          <input onChange={(e) => grabPassword(e.target.value)} id="password" type="password" value={password} placeholder="******" />
         </label>
-        <label htmlFor="password-confirmation">
-          Password Confirmation
-          <input id="password-confirmation" type="email" placeholder="user@email.com" />
-        </label>
-        <button className={btnName}>{btnName}</button>
-        <a href="/" className="sign-up">Create a new account</a>
-        <a href="/" className="sign-in">Sign In</a>
+        <button type="submit" className="sign-in">Sign In</button>
+        <a href="/new/user" className="sign-up">Create a new account</a>
       </form>
     </div>
   );
