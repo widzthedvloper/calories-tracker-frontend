@@ -1,6 +1,7 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-console */
 import React, { useState } from 'react';
+import logUser from '../API/api';
 
 const SignInComponent = () => {
   const [btnName, setBtnName] = useState('Sign In');
