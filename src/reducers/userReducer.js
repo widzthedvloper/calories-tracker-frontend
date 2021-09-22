@@ -1,6 +1,7 @@
 const initialState = {
   auth_token: null,
   foods: [],
+  ingredients: [],
   calories: [],
   message: null,
 };
