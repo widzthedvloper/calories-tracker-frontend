@@ -30,4 +30,20 @@ const createUser = async (user) => {
   }
 };
 
-export { logUser, createUser };
+const getFoods = async (user) => {
+  try {
+    const response = await fetch('https://fierce-escarpment-48376.herokuapp.com/foods', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(user),
+    });
+    return response.json();
+  } catch (error) {
+    return error.message;
+  }
+};
+
+export { logUser, createUser, getFoods };
