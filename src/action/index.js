@@ -1,4 +1,4 @@
-import { logUser, createUser } from '../API/api';
+import { logUser, createUser, getFoods } from '../API/api';
 
 const checkUser = (user) => async (dispatch) => {
   const payload = await logUser(user);
@@ -14,4 +14,11 @@ const registerUser = (user) => async (dispatch) => {
   );
 };
 
-export { checkUser, registerUser };
+const fetchUser = (user) => async (dispatch) => {
+  const payload = await getFoods(user);
+  dispatch(
+    { type: 'FETCH-USER-FOOD', payload },
+  );
+};
+
+export { checkUser, registerUser, fetchUser };
