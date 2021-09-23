@@ -1,5 +1,5 @@
 const initialState = {
-  auth_token: null,
+  auth_token: '',
   foods: [],
   ingredients: [],
   calories: [],

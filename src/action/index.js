@@ -14,11 +14,11 @@ const registerUser = (user) => async (dispatch) => {
   );
 };
 
-const fetchUser = (user) => async (dispatch) => {
+const fetchUserFood = (user) => async (dispatch) => {
   const payload = await getFoods(user);
   dispatch(
     { type: 'FETCH-USER-FOOD', payload },
   );
 };
 
-export { checkUser, registerUser, fetchUser };
+export { checkUser, registerUser, fetchUserFood };
