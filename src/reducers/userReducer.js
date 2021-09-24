@@ -1,9 +1,9 @@
 const initialState = {
-  auth_token: '',
+  id: null,
+  email: null,
   foods: [],
   ingredients: [],
   calories: [],
-  message: null,
 };
 
 const userReducer = (state = initialState, action) => {
@@ -13,21 +13,17 @@ const userReducer = (state = initialState, action) => {
         ...state,
         foods: action.payload,
       };
-    case 'FETCH-USER-CALORIE':
-      return {
-        ...state,
-        calories: action.payload,
-      };
     case 'LOG-USER':
       return {
         ...state,
-        auth_token: action.payload.auth_token,
+        id: action.payload.id,
+        email: action.payload.email,
       };
     case 'SIGN-USER':
       return {
         ...state,
-        auth_token: action.payload.auth_token,
-        message: action.payload.message,
+        id: action.payload.id,
+        email: action.payload.email,
       };
     default:
       return state;
