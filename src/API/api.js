@@ -1,4 +1,8 @@
+/* eslint-disable prefer-template */
 /* eslint-disable quote-props */
+
+const baseUrl = 'https://obscure-ridge-52411.herokuapp.com/api/v1/';
+
 const logUser = async (user) => {
   try {
     const response = await fetch('https://fierce-escarpment-48376.herokuapp.com/auth/login', {
@@ -17,7 +21,7 @@ const logUser = async (user) => {
 
 const createUser = async (user) => {
   try {
-    const response = await fetch('https://fierce-escarpment-48376.herokuapp.com/signup', {
+    const response = await fetch(`${baseUrl}/api/v1/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -31,16 +35,17 @@ const createUser = async (user) => {
   }
 };
 
-const getFoods = async (user) => {
-  const resp = fetch('https://fierce-escarpment-48376.herokuapp.com/foods', {
-    headers: {
-      'alg': 'HS256',
-      'typ': 'JWT',
-      'Authorization': `Bearer ${user.Authorization}`,
+const getFoods = async (id) => {
+  const resp = fetch(`${baseUrl}/api/v11/users/${id}/foods`, {
+    method: 'GET',
+    params: {},
+    'headers': {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => data.foods)
+    .then((data) => data)
     .catch((error) => error.message);
 
   return resp;

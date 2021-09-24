@@ -9,6 +9,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.21.4",
     "bindings": "^1.5.0",
     "file-uri-to-path": "^2.0.0",
     "nan": "^2.15.0",
