@@ -1,11 +1,11 @@
 /* eslint-disable prefer-template */
 /* eslint-disable quote-props */
 
-const baseUrl = 'https://obscure-ridge-52411.herokuapp.com/api/v1/';
+const baseUrl = 'https://obscure-ridge-52411.herokuapp.com/api/v1';
 
 const logUser = async (user) => {
   try {
-    const response = await fetch('https://fierce-escarpment-48376.herokuapp.com/auth/login', {
+    const response = await fetch(`${baseUrl}/log`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -21,7 +21,7 @@ const logUser = async (user) => {
 
 const createUser = async (user) => {
   try {
-    const response = await fetch(`${baseUrl}/api/v1/users`, {
+    const response = await fetch(`${baseUrl}/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const createUser = async (user) => {
 };
 
 const getFoods = async (id) => {
-  const resp = fetch(`${baseUrl}/api/v11/users/${id}/foods`, {
+  const resp = fetch(`${baseUrl}/users/${id}/foods`, {
     method: 'GET',
     params: {},
     'headers': {
