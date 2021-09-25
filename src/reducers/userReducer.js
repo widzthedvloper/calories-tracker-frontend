@@ -2,7 +2,6 @@ const initialState = {
   id: null,
   email: null,
   foods: [],
-  ingredients: [],
   calories: [],
 };
 
@@ -18,6 +17,7 @@ const userReducer = (state = initialState, action) => {
         ...state,
         id: action.payload.id,
         email: action.payload.email,
+        foods: action.payload.foods,
       };
     case 'SIGN-USER':
       return {
