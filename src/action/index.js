@@ -9,7 +9,6 @@ const checkUser = (user) => async (dispatch) => {
 
 const registerUser = (user) => async (dispatch) => {
   const payload = await createUser(user);
-  localStorage.setItem('jwt_token', `Bearer ${payload.auth_token}`);
   dispatch(
     { type: 'SIGN-USER', payload },
   );
