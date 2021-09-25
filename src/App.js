@@ -7,20 +7,19 @@ import FooterComponent from './component/FooterComponent';
 import { fetchUserFood } from './action';
 
 const mapState = (state) => ({
-  userOauth: state.user.auth_token,
+  id: state.user.id,
   userFoods: state.user.foods,
-  foodIngredients: state.user.ingredients,
+  email: state.user.email,
 });
 
-function App() {
+function App({ id }) {
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log('Hi');
+    dispatch(fetchUserFood(id));
   }, []);
 
   const handleClick = () => {
-    const mykey = localStorage.getItem('jwt_token');
-    dispatch(fetchUserFood(mykey));
+    dispatch(fetchUserFood(id));
   };
   return (
     <>

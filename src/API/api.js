@@ -8,6 +8,7 @@ const logUser = async (user) => {
     const response = await fetch(`${baseUrl}/log`, {
       method: 'POST',
       headers: {
+        'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
@@ -24,6 +25,7 @@ const createUser = async (user) => {
     const response = await fetch(`${baseUrl}/users`, {
       method: 'POST',
       headers: {
+        'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
@@ -40,6 +42,7 @@ const getFoods = async (id) => {
     method: 'GET',
     params: {},
     'headers': {
+      'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',
       Accept: 'application/json',
     },
