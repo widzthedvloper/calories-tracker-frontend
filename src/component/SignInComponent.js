@@ -8,7 +8,6 @@ import { checkUser } from '../action';
 
 const SignInComponent = () => {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -16,13 +15,9 @@ const SignInComponent = () => {
     setEmail(emailInput);
   };
 
-  const grabPassword = (passwordInput) => {
-    setPassword(passwordInput);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(checkUser({ email, password }));
+    dispatch(checkUser({ email }));
     history.push('/App');
   };
 
@@ -32,10 +27,6 @@ const SignInComponent = () => {
         <label htmlFor="email">
           Email
           <input onChange={(e) => grabEmail(e.target.value)} id="email" type="email" value={email} placeholder="user@email.com" />
-        </label>
-        <label htmlFor="password">
-          Password
-          <input onChange={(e) => grabPassword(e.target.value)} id="password" type="password" value={password} placeholder="******" />
         </label>
         <button type="submit" className="sign-in">Sign In</button>
         <a href="/new/user" className="sign-up">Create a new account</a>
