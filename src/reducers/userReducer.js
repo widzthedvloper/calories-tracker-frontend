@@ -3,6 +3,7 @@ const initialState = {
   email: null,
   foods: [],
   calories: [],
+  ingredients: [],
 };
 
 const userReducer = (state = initialState, action) => {

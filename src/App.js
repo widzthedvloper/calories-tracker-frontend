@@ -5,6 +5,7 @@ import { connect, useDispatch } from 'react-redux';
 import HeadComponent from './component/HeadComponent';
 import FooterComponent from './component/FooterComponent';
 import { fetchUserFood } from './action';
+import DashboardContainer from './container/DashboardContainer';
 
 const mapState = (state) => ({
   id: state.user.id,
@@ -18,16 +19,10 @@ function App({ id }) {
     dispatch(fetchUserFood(id));
   }, []);
 
-  const handleClick = () => {
-    dispatch(fetchUserFood(id));
-  };
   return (
     <>
       <HeadComponent />
-      <h1>
-        You made it to the main page:
-        <button type="button" onClick={handleClick}>fetch</button>
-      </h1>
+      <DashboardContainer />
       <FooterComponent />
     </>
   );

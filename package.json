@@ -12,6 +12,7 @@
     "axios": "^0.21.4",
     "bindings": "^1.5.0",
     "file-uri-to-path": "^2.0.0",
+    "font-awesome": "^4.7.0",
     "nan": "^2.15.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
