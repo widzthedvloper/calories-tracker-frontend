@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import Routes from './component/Routes';
 import reportWebVitals from './reportWebVitals';
 import configureStore from './store/configureStore';
+import './style/font-awesome.min.css';
 
 const store = configureStore();
 
