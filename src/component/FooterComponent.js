@@ -1,10 +1,13 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function FooterComponent() {
   return (
     <div className="footer-nav">
       <div className="nav-item">
-        <p className="footer-text">Add Food</p>
+        <NavLink className="footer-item" activeClassName="is-active" to="/new/food">
+          Add Food
+        </NavLink>
       </div>
       <div className="nav-item">
         <p className="footer-text">Trac It</p>
