@@ -54,4 +54,24 @@ const getFoods = async (id) => {
   return resp;
 };
 
-export { logUser, createUser, getFoods };
+const createFood = async (id, food) => {
+  const resp = fetch(`${baseUrl}/users/${id}/foods`, {
+    method: 'POST',
+    params: {},
+    'headers': {
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify(food),
+  })
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => error.message);
+
+  return resp;
+};
+
+export {
+  logUser, createUser, getFoods, createFood,
+};
