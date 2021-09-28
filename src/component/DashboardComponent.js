@@ -7,7 +7,6 @@ function DashboardComponent({
 }) {
   const today = new Date();
   const date = `${today.getDate()} / ${today.getMonth() + 1} / ${today.getFullYear()}`;
-
   const foods = userFoods.map((food) => (
     <div className="meal" key={food.id}>
       <div className="meal-icon">
@@ -16,11 +15,6 @@ function DashboardComponent({
       <div className="meal-details">
         <span>{food.name}</span>
         <br />
-        <span>
-          {food.ingredients.length}
-          {' '}
-          :ingredients
-        </span>
       </div>
     </div>
   ));

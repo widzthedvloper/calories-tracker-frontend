@@ -9,9 +9,10 @@ const mapState = (state) => ({
 function AddFoodComponent({ id }) {
   const [name, setName] = useState();
   const grabName = (e) => {
-    setName(e.targrt.value);
+    setName(e.target.value);
   };
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     createFood(id, { name, user_id: id });
   };
   return (

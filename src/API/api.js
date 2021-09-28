@@ -68,7 +68,6 @@ const createFood = async (id, food) => {
     .then((response) => response.json())
     .then((data) => data)
     .catch((error) => error.message);
-
   return resp;
 };
 

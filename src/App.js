@@ -9,8 +9,6 @@ import DashboardContainer from './container/DashboardContainer';
 
 const mapState = (state) => ({
   id: state.user.id,
-  userFoods: state.user.foods,
-  email: state.user.email,
 });
 
 function App({ id }) {
