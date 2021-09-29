@@ -1,5 +1,9 @@
 $PANTONE-MAIN: #48c4ed;
 $PANTINE-SECONDARY: #5b8092;
-$PANTONE-TERNARY: #97e493; 
+$PANTONE-TERNARY: #97e493;
 
-
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
