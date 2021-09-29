@@ -1,0 +1,27 @@
+$PANTONE-MAIN: #48c4ed;
+$PANTINE-SECONDARY: #132630;
+$PANTONE-TERNARY: #97e493;
+
+.footer-nav {
+  background-color: $PANTINE-SECONDARY;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+
+  .nav-item {
+    height: 50px;
+    align-self: center;
+    padding: 10% 0;
+
+    a {
+      text-decoration: none;
+      color: white;
+      display: block;
+      align-self: center;
+    }
+  }
+}
