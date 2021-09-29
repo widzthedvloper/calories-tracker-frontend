@@ -1,0 +1,41 @@
+$PANTONE-MAIN: #48c4ed;
+$PANTINE-SECONDARY: #5b8092;
+$PANTONE-TERNARY: #97e493;
+
+body {
+  background-color: $PANTONE-MAIN;
+
+  #route {
+    width: 100%;
+  }
+
+  .route {
+    max-width: 90%;
+    margin: 0 auto;
+    height: 100%;
+
+    .form-confirmation {
+      max-width: 80%;
+      background-color: rgb(255, 255, 255);
+      padding: 20px;
+      margin: 300px auto;
+      border-radius: 10px;
+
+      #email {
+        padding-left: 5px;
+        border-radius: 10px;
+      }
+
+      .sign-in {
+        background-color: $PANTONE-MAIN;
+        margin: 5px 0;
+        border-radius: 10px;
+      }
+
+      .sign-up {
+        text-decoration: none;
+        color: $PANTONE-MAIN;
+      }
+    }
+  }
+}

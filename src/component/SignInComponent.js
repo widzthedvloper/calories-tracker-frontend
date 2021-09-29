@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { checkUser } from '../action';
+import '../style/signin.css';
 
 const SignInComponent = () => {
   const [email, setEmail] = useState('');
@@ -26,9 +27,12 @@ const SignInComponent = () => {
       <form onSubmit={handleSubmit}>
         <label htmlFor="email">
           Email
+          <br />
           <input onChange={(e) => grabEmail(e.target.value)} id="email" type="email" value={email} placeholder="user@email.com" />
         </label>
+        <br />
         <button type="submit" className="sign-in">Sign In</button>
+        <br />
         <a href="/new/user" className="sign-up">Create a new account</a>
       </form>
     </div>

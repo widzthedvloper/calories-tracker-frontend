@@ -1,0 +1,38 @@
+body {
+  background-color: #48c4ed;
+}
+
+body #route {
+  width: 100%;
+}
+
+body .route {
+  max-width: 90%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+body .route .form-confirmation {
+  max-width: 80%;
+  background-color: white;
+  padding: 20px;
+  margin: 300px auto;
+  border-radius: 10px;
+}
+
+body .route .form-confirmation #email {
+  padding-left: 5px;
+  border-radius: 10px;
+}
+
+body .route .form-confirmation .sign-in {
+  background-color: #48c4ed;
+  margin: 5px 0;
+  border-radius: 10px;
+}
+
+body .route .form-confirmation .sign-up {
+  text-decoration: none;
+  color: #48c4ed;
+}
+/*# sourceMappingURL=signin.css.map */
