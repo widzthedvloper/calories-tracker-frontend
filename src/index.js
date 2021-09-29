@@ -5,6 +5,7 @@ import Routes from './component/Routes';
 import reportWebVitals from './reportWebVitals';
 import configureStore from './store/configureStore';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
+import './style/index.css';
 
 const store = configureStore();
 
