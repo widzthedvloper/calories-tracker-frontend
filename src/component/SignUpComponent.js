@@ -27,8 +27,10 @@ function SignUpComponent() {
           Email
           <input onChange={(e) => grabEmail(e.target.value)} id="email" type="email" value={email} placeholder="user@email.com" />
         </label>
+        <br />
         <button type="submit" className="sign-in">Sign Up</button>
-        <a href="/" className="sign-up">Already have an account!!! Sign In</a>
+        <br />
+        <a href="/" className="sign-up">Already have an account? Sign In!</a>
       </form>
     </div>
   );
