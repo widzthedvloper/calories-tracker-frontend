@@ -4,6 +4,10 @@ $PANTONE-TERNARY: #97e493;
 
 .head-nav {
   color: #fff;
+  width: 100%;
   height: 100px;
   padding: 20px;
+  position: fixed;
+  z-index: 100;
+  background-color: $PANTONE-MAIN;
 }
