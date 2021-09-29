@@ -4,6 +4,7 @@ import App from '../App';
 import AddFoodComponent from './AddFoodComponent';
 import SignInComponent from './SignInComponent';
 import SignUpComponent from './SignUpComponent';
+import AddIngredientsComponent from './AddIngredientsComponent';
 
 const Routes = () => (
   <BrowserRouter>
@@ -13,6 +14,7 @@ const Routes = () => (
         <Route exact path="/App" component={App} />
         <Route exact path="/new/user" component={SignUpComponent} />
         <Route exact path="/new/food" component={AddFoodComponent} />
+        <Route exact path="/new/ingredient/:user_id/:food_id" component={AddIngredientsComponent} />
       </Switch>
     </div>
   </BrowserRouter>

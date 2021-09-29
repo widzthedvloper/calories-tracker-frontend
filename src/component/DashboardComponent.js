@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import foodLogo from '../img/food.png';
 
 function DashboardComponent({
-  id, userFoods, ingredients, email,
+  id, userFoods, email, calorie,
 }) {
   const today = new Date();
   const date = `${today.getDate()} / ${today.getMonth() + 1} / ${today.getFullYear()}`;
@@ -15,6 +16,9 @@ function DashboardComponent({
       <div className="meal-details">
         <span>{food.name}</span>
         <br />
+        <NavLink className="footer-item" activeClassName="is-active" to={`/new/ingredient/${id}/${food.id}`}>
+          <span>Add ingredients</span>
+        </NavLink>
       </div>
     </div>
   ));
@@ -25,8 +29,7 @@ function DashboardComponent({
       <div className="time">{date}</div>
       <div className="measurement-total">
         <div className="meal-total">{userFoods.length}</div>
-        <div className="meal-ingredient">{ingredients.length}</div>
-        <div className="calorie-total">{id}</div>
+        <div className="calorie-total">{calorie.length}</div>
       </div>
       <div className="measurment-panel">
         {foods}

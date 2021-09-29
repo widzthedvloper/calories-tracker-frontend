@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable prefer-template */
 /* eslint-disable quote-props */
 
@@ -71,6 +72,23 @@ const createFood = async (id, food) => {
   return resp;
 };
 
+const createIngredient = async (food_id, user_id, ingredient) => {
+  const resp = fetch(`${baseUrl}/users/${user_id}/foods/${food_id}/ingredients`, {
+    method: 'POST',
+    params: {},
+    'headers': {
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify(ingredient),
+  })
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => error.message);
+  return resp;
+};
+
 export {
-  logUser, createUser, getFoods, createFood,
+  logUser, createUser, getFoods, createFood, createIngredient,
 };

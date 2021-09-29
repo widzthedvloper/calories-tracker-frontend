@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { createFood } from '../API/api';
 
 const mapState = (state) => ({
   id: state.user.id,
 });
 function AddFoodComponent({ id }) {
+  const history = useHistory();
   const [name, setName] = useState();
   const grabName = (e) => {
     setName(e.target.value);
@@ -14,6 +16,7 @@ function AddFoodComponent({ id }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     createFood(id, { name, user_id: id });
+    history.push('/App');
   };
   return (
     <>
