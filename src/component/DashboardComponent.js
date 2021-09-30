@@ -36,7 +36,7 @@ function DashboardComponent({
           <span>{food.name}</span>
           <br />
           <NavLink className="footer-item" activeClassName="is-active" to={`/new/ingredient/${id}/${food.id}`}>
-            <span>Add ingredients</span>
+            <span style={{ color: '#291' }}>Add ingredients</span>
           </NavLink>
         </div>
       </div>
