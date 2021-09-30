@@ -20,12 +20,17 @@ function AddFoodComponent({ id }) {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="food">
-          <input onChange={grabName} id="food" type="text" className="food" placeholder="" value={name} />
-        </label>
-        <button type="submit">Add Food</button>
-      </form>
+      <div className="form-confirmation">
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="email">
+            Food
+            <br />
+            <input onChange={grabName} id="email" type="text" className="email" placeholder="enter your food name" value={name} />
+          </label>
+          <br />
+          <button className="sign-in" type="submit">Add Food</button>
+        </form>
+      </div>
     </>
   );
 }
