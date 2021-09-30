@@ -11,10 +11,10 @@ function FooterComponent() {
         </NavLink>
       </div>
       <div className="nav-item">
-        <NavLink className="footer-text" activeClassName="is-active" to="/App">Trac It</NavLink>
+        <NavLink className="footer-text" activeClassName="is-active" to="/App">Dash</NavLink>
       </div>
       <div className="nav-item">
-        <NavLink className="footer-text" activeClassName="is-active" to="/App">Your Health</NavLink>
+        <NavLink className="footer-text" activeClassName="is-active" to="/App">Ingredient</NavLink>
       </div>
       <div className="nav-item">
         <NavLink className="footer-text" activeClassName="is-active" to="/App">More</NavLink>

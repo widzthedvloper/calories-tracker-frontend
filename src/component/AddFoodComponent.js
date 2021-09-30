@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, NavLink } from 'react-router-dom';
 import { createFood } from '../API/api';
 
 const mapState = (state) => ({
@@ -30,6 +30,22 @@ function AddFoodComponent({ id }) {
           <br />
           <button className="sign-in" type="submit">Add Food</button>
         </form>
+      </div>
+      <div className="footer-nav">
+        <div className="nav-item">
+          <NavLink className="footer-item" activeClassName="is-active" to="/new/food">
+            Add Food
+          </NavLink>
+        </div>
+        <div className="nav-item">
+          <NavLink className="footer-text" activeClassName="is-active" to="/App">Dash</NavLink>
+        </div>
+        <div className="nav-item">
+          <NavLink className="footer-text" activeClassName="is-active" to="/App">Ingredient</NavLink>
+        </div>
+        <div className="nav-item">
+          <NavLink className="footer-text" activeClassName="is-active" to="/App">More</NavLink>
+        </div>
       </div>
     </>
   );

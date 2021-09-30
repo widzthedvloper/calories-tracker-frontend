@@ -2,7 +2,7 @@
 /* eslint-disable object-curly-spacing */
 /* eslint-disable camelcase */
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, NavLink } from 'react-router-dom';
 import { createIngredient } from '../API/api';
 import '../style/ingredient.css';
 
@@ -44,7 +44,22 @@ function AddIngredientsComponent({match}) {
           <button className="sign-in" type="submit">Add ingredient</button>
         </form>
       </div>
-
+      <div className="footer-nav">
+        <div className="nav-item">
+          <NavLink className="footer-item" activeClassName="is-active" to="/new/food">
+            Add Food
+          </NavLink>
+        </div>
+        <div className="nav-item">
+          <NavLink className="footer-text" activeClassName="is-active" to="/App">Dash</NavLink>
+        </div>
+        <div className="nav-item">
+          <NavLink className="footer-text" activeClassName="is-active" to="/App">Ingredient</NavLink>
+        </div>
+        <div className="nav-item">
+          <NavLink className="footer-text" activeClassName="is-active" to="/App">More</NavLink>
+        </div>
+      </div>
     </>
   );
 }
