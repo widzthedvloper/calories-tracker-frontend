@@ -35,6 +35,7 @@
 }
 
 .measurement-panel {
+  padding-bottom: 100px;
   background-color: #eee8e8;
   display: -webkit-box;
   display: -ms-flexbox;
