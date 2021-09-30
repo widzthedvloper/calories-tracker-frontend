@@ -2,6 +2,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import foodLogo from '../img/food.png';
+import '../style/dashboard.css';
 
 function DashboardComponent({
   id, userFoods, email, calorie,
@@ -24,17 +25,23 @@ function DashboardComponent({
   ));
 
   return (
-    <>
-      <h2>{email}</h2>
+    <div className="dash">
+      <h2 className="email-header">{email}</h2>
       <div className="time">{date}</div>
       <div className="measurement-total">
-        <div className="meal-total">{userFoods.length}</div>
-        <div className="calorie-total">{calorie.length}</div>
+        <div className="meal-total">
+          <p>{userFoods.length}</p>
+          <p>meal</p>
+        </div>
+        <div className="calorie-total">
+          <p>{calorie.length}</p>
+          <p>calorie</p>
+        </div>
       </div>
-      <div className="measurment-panel">
+      <div className="measurement-panel">
         {foods}
       </div>
-    </>
+    </div>
   );
 }
 

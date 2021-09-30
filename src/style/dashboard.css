@@ -1,0 +1,73 @@
+.dash {
+  padding-top: 120px;
+  background-color: #fff;
+}
+
+.dash .email-header {
+  text-align: center;
+  color: black;
+}
+
+.dash .time {
+  margin: 10px;
+  text-align: center;
+}
+
+.dash .measurement-total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 2%;
+}
+
+.dash .measurement-total .meal-total,
+.dash .measurement-total .calorie-total {
+  border: 7px solid #ccc;
+  border-radius: 50%;
+  border-top: 7px solid #97e493;
+  border-right: 7px solid #97e493;
+  height: 100px;
+  width: 100px;
+  padding: 20px;
+  text-align: center;
+}
+
+.measurement-panel {
+  background-color: #eee8e8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.measurement-panel .meal {
+  max-width: 45%;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 5% 0;
+}
+
+.measurement-panel .meal .meal-icon {
+  width: 40%;
+}
+
+.measurement-panel .meal .meal-icon img {
+  max-width: 100%;
+}
+
+.measurement-panel .meal .meal-details {
+  padding: 20% 0;
+}
+
+.measurement-panel .meal .meal-details a {
+  text-decoration: none;
+  color: black;
+}
+/*# sourceMappingURL=dashboard.css.map */
