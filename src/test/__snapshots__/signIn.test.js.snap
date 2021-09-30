@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders butto correctly 1`] = `
+<button>
+  Sign In
+</button>
+`;
+
+exports[`renders button correctly 1`] = `
+<button>
+  Sign In
+</button>
+`;
+
+exports[`renders button correctly 2`] = `
+<button>
+  Sign Up
+</button>
+`;
+
+exports[`renders label correctly 1`] = `
+<label>
+  Email
+</label>
+`;
+
+exports[`renders link correctly 1`] = `
+<a>
+  Create a new account
+</a>
+`;
+
+exports[`renders link correctly 2`] = `
+<a>
+  Already have an account? Sign In!
+</a>
+`;
+
+exports[`renders link correctly 3`] = `
+<a>
+  Add Food
+</a>
+`;
+
+exports[`renders link correctly 4`] = `
+<a>
+  Dash
+</a>
+`;
+
+exports[`renders link correctly 5`] = `
+<a>
+  Ingredient
+</a>
+`;
+
+exports[`renders link correctly 6`] = `
+<a>
+  More
+</a>
+`;
+
+exports[`renders title correctly 1`] = `
+<h1>
+  Calories Tracker
+</h1>
+`;
