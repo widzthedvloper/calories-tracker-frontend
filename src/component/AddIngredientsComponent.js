@@ -4,6 +4,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { createIngredient } from '../API/api';
+import '../style/ingredient.css';
 
 function AddIngredientsComponent({match}) {
   const history = useHistory();
@@ -27,17 +28,23 @@ function AddIngredientsComponent({match}) {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="ingredient">
-          ingredient
-          <input onChange={grabName} id="ingredient" type="text" className="calorie" placeholder="" value={name} />
-        </label>
-        <label htmlFor="calorie">
-          Calorie
-          <input onChange={grabCalorie} id="calorie" type="number" className="calorie" placeholder="" value={calorie} />
-        </label>
-        <button type="submit">Add ingredient</button>
-      </form>
+      <div className="form-confirmation">
+
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="email">
+            Ingredient
+            <input onChange={grabName} id="email" type="text" className="calorie" placeholder="" value={name} />
+          </label>
+          <br />
+          <label htmlFor="calorie">
+            Calorie
+            <input onChange={grabCalorie} id="calorie" type="number" className="calorie" placeholder="" value={calorie} />
+          </label>
+          <br />
+          <button className="sign-in" type="submit">Add ingredient</button>
+        </form>
+      </div>
+
     </>
   );
 }

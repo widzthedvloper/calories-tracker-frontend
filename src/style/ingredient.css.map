@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACP,YAAY,EAAE,GAAG;EACjB,aAAa,EAAE,IAAI;EACnB,KAAK,EAAE,IAAI;CACZ",
+    "sources": [
+        "ingredient.scss"
+    ],
+    "names": [],
+    "file": "ingredient.css"
+}
