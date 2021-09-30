@@ -39,9 +39,9 @@ const createUser = async (user) => {
 };
 
 const getFoods = async (id) => {
-  const resp = fetch(`${baseUrl}/users/${id}/foods`, {
+  const resp = fetch(`${baseUrl}/users/${id}/foods?`, {
     method: 'GET',
-    params: {},
+    params: { id },
     'headers': {
       'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',

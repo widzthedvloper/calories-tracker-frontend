@@ -1,7 +1,11 @@
 import { logUser, createUser, getFoods } from '../API/api';
 
 const checkUser = (user) => async (dispatch) => {
-  const payload = await logUser(user);
+  let payload = await logUser(user);
+  if (payload === null) {
+    payload = { id: null, email: null, foods: [] };
+  }
+
   dispatch(
     { type: 'LOG-USER', payload },
   );

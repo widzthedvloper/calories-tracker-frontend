@@ -9,20 +9,39 @@ function DashboardComponent({
 }) {
   const today = new Date();
   const date = `${today.getDate()} / ${today.getMonth() + 1} / ${today.getFullYear()}`;
-  const foods = userFoods.map((food) => (
-    <div className="meal" key={food.id}>
-      <div className="meal-icon">
-        <img src={foodLogo} alt="Ustensils logo" />
+
+  let foods;
+  if (userFoods.length === 0 || userFoods.status === 500 || userFoods === null) {
+    foods = [[
+      <div className="meal" key={1}>
+        <div className="meal-icon">
+          <img src={foodLogo} alt="Ustensils logo" />
+        </div>
+        <div className="meal-details">
+          <span>Pasta</span>
+          <br />
+          <NavLink className="footer-item" activeClassName="is-active" to={`/new/ingredient/${1}/${1}`}>
+            <span>Add ingredients</span>
+          </NavLink>
+        </div>
+      </div>,
+    ]];
+  } else {
+    foods = userFoods.map((food) => (
+      <div className="meal" key={food.id}>
+        <div className="meal-icon">
+          <img src={foodLogo} alt="Ustensils logo" />
+        </div>
+        <div className="meal-details">
+          <span>{food.name}</span>
+          <br />
+          <NavLink className="footer-item" activeClassName="is-active" to={`/new/ingredient/${id}/${food.id}`}>
+            <span>Add ingredients</span>
+          </NavLink>
+        </div>
       </div>
-      <div className="meal-details">
-        <span>{food.name}</span>
-        <br />
-        <NavLink className="footer-item" activeClassName="is-active" to={`/new/ingredient/${id}/${food.id}`}>
-          <span>Add ingredients</span>
-        </NavLink>
-      </div>
-    </div>
-  ));
+    ));
+  }
 
   return (
     <div className="dash">

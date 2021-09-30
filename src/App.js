@@ -1,21 +1,22 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect } from 'react';
-import { connect, useDispatch } from 'react-redux';
+// import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 // import axios from 'axios';
 import HeadComponent from './component/HeadComponent';
 import FooterComponent from './component/FooterComponent';
-import { fetchUserFood } from './action';
+// import { checkUser } from './action';
 import DashboardContainer from './container/DashboardContainer';
 
 const mapState = (state) => ({
   id: state.user.id,
+  email: state.user.email,
 });
 
-function App({ id }) {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchUserFood(id));
-  }, []);
+function App() {
+  // const dispatch = useDispatch();
+  // // useEffect(() => {
+  // //   dispatch(checkUser({ email }));
+  // // }, []);
 
   return (
     <>
