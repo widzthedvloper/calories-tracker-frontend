@@ -42,6 +42,9 @@
 5. Open the vscode terminal and run the application by typing `npm start` and hit enter.
 6. Run `npm test` to test the app
 
+## Design idea
+
+- Gregoire Vella on Behance
 ## Contributing
 
 This project is for educational purposes.
