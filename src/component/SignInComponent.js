@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { checkUser } from '../action';
 import '../style/signin.css';
 
@@ -16,8 +16,13 @@ const SignInComponent = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(checkUser({ email }));
-    history.push('/App');
   };
+
+  const id = useSelector(state => state.user.id)
+
+  if(id != null){
+    history.push('/App');
+  }
 
   return (
     <div className="form-confirmation">
