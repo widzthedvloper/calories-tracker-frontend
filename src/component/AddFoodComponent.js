@@ -17,6 +17,9 @@ const mapState = (state) => ({
 });
 function AddFoodComponent({ id }) {
   const history = useHistory();
+  if(id === null){
+    history.push('/');
+  }
   const [name, setName] = useState();
   const grabName = (e) => {
     setName(e.target.value);

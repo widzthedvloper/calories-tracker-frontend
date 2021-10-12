@@ -6,6 +6,9 @@ import '../style/ingredient.css';
 
 function AddIngredientsComponent({match}) {
   const history = useHistory();
+  if(id === null){
+    history.push('/');
+  }
   const { user_id, food_id } = match.params;
   const [name, setName] = useState();
   const [calorie, setCalorie] = useState();

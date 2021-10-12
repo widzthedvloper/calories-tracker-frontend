@@ -4,6 +4,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import foodLogo from '../img/food.png';
 import '../style/dashboard.css';
+import { useHistory } from 'react-router-dom';
 
 const mapState = (state) => ({
   id: state.user.id,
@@ -16,6 +17,10 @@ const mapState = (state) => ({
 function DashboardComponent({
   id, userFoods, email, calorie,
 }) {
+  const history = useHistory();
+  if(id === null){
+    history.push('/');
+  }
   const today = new Date();
   const date = `${today.getDate()} / ${today.getMonth() + 1} / ${today.getFullYear()}`;
 
