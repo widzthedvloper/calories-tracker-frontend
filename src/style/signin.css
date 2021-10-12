@@ -26,7 +26,7 @@ body .route .form-confirmation #email {
 }
 
 body .route .form-confirmation .sign-in {
-  background-color: #48c4ed;
+  background-color: #56baed;
   margin: 5px 0;
   border-radius: 10px;
   width: 100%;
@@ -34,6 +34,6 @@ body .route .form-confirmation .sign-in {
 
 body .route .form-confirmation .sign-up {
   text-decoration: none;
-  color: #48c4ed;
+  color: #56baed;
 }
 /*# sourceMappingURL=signin.css.map */
