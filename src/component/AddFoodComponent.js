@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useHistory, NavLink } from 'react-router-dom';
@@ -83,6 +83,10 @@ function AddFoodComponent({ id }) {
     </div>
     </>
   );
+}
+
+AddFoodComponent.propTypes = {
+  id: PropTypes.number
 }
 
 export default connect(mapState)(AddFoodComponent);

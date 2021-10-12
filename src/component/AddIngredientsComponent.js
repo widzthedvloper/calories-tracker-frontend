@@ -1,6 +1,4 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable object-curly-spacing */
-/* eslint-disable camelcase */
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { useHistory, NavLink } from 'react-router-dom';
 import { createIngredient } from '../API/api';
@@ -62,6 +60,10 @@ function AddIngredientsComponent({match}) {
       </div>
     </>
   );
+}
+
+AddIngredientsComponent.propTypes = {
+  match: PropTypes.object
 }
 
 export default AddIngredientsComponent;

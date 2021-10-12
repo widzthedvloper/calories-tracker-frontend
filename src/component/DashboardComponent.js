@@ -1,8 +1,17 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import foodLogo from '../img/food.png';
 import '../style/dashboard.css';
+
+const mapState = (state) => ({
+  id: state.user.id,
+  userFoods: state.user.foods,
+  ingredients: state.user.ingredients,
+  email: state.user.email,
+  calorie: state.user.calories,
+});
 
 function DashboardComponent({
   id, userFoods, email, calorie,
@@ -64,4 +73,11 @@ function DashboardComponent({
   );
 }
 
-export default DashboardComponent;
+DashboardComponent.propTypes = {
+  id: PropTypes.number,
+  userFoods: PropTypes.array,
+  email: PropTypes.string,
+  calorie: PropTypes.array
+}
+
+export default connect(mapState)(DashboardComponent);
