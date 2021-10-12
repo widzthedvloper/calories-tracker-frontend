@@ -13,22 +13,44 @@ function FooterComponent() {
   return (
     <div className="footer-nav">
       <div className="nav-item">
-        <FontAwesomeIcon icon={faPlus} style={{ marginLeft: '50%', marginTop: '15%'}}/>
-        <NavLink className="footer-item" activeClassName="is-active" to="/new/food" style={{marginLeft: '25%'}}>
-          Add Food
+        <NavLink className="footer-item" activeClassName="is-active" to="/new/food" style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
+          <span style={{display: 'flex', justifyContent: 'center'}}>
+            <FontAwesomeIcon icon={faPlus} style={{ display: 'block'}} />
+          </span>
+          <span style={{display: 'flex', justifyContent: 'center'}}>
+            Add Food
+          </span>
         </NavLink>
       </div>
       <div className="nav-item">
-        <FontAwesomeIcon icon={faChartLine} style={{ marginLeft: '50%', marginTop: '15%'}}/>
-        <NavLink className="footer-text" activeClassName="is-active" to="/App" style={{marginLeft: '25%'}} >Dash</NavLink>
+        <NavLink className="footer-text" activeClassName="is-active" to="/App" style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}} >
+          <span style={{display: 'flex', justifyContent: 'center'}}>
+          <FontAwesomeIcon icon={faChartLine} style={{ display: 'block'}} />
+          </span>
+          <span style={{display: 'flex', justifyContent: 'center'}}>
+            Dash
+          </span>
+        </NavLink>
       </div>
       <div className="nav-item">
-        <FontAwesomeIcon icon={faTasks} style={{ marginLeft: '50%', marginTop: '15%'}}/>
-        <NavLink className="footer-text" activeClassName="is-active" to="/App" style={{marginLeft: '-6%'}} >Ingredient</NavLink>
+        <NavLink className="footer-text" activeClassName="is-active" to="/App" style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}} >
+          <span style={{display: 'flex', justifyContent: 'center'}}>
+            <FontAwesomeIcon icon={faTasks} style={{ display: 'block'}} />
+          </span>
+          <span style={{display: 'flex', justifyContent: 'center'}}>
+            Ingredient
+          </span>
+        </NavLink>
       </div>
       <div className="nav-item">
-        <FontAwesomeIcon icon={faEllipsisH} style={{ marginLeft: '50%', marginTop: '15%'}}/>
-        <NavLink className="footer-text" activeClassName="is-active" to="/App" style={{marginLeft: '25%'}} >More</NavLink>
+        <NavLink className="footer-text" activeClassName="is-active" to="/App" style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}} >
+          <span style={{display: 'flex', justifyContent: 'center'}}>
+            <FontAwesomeIcon icon={faEllipsisH} style={{ display: 'block'}} />
+          </span>
+          <span style={{display: 'flex', justifyContent: 'center'}}>
+            More
+          </span>
+        </NavLink>
       </div>
     </div>
   );
