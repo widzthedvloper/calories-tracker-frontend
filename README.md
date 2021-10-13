@@ -44,7 +44,9 @@
 
 ## Design idea
 
-- Gregoire Vella on Behance
+- Gregoire Vella
+- [Design on Behance](https://www.behance.net/gallery/13271423/Bodytrackit-An-iOs-app-Branding-UX-and-UI)
+
 ## Contributing
 
 This project is for educational purposes.
