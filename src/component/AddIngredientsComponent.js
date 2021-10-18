@@ -2,10 +2,13 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { useHistory, NavLink } from 'react-router-dom';
 import { createIngredient } from '../API/api';
+import { useSelector } from 'react-redux';
 import '../style/ingredient.css';
 
 function AddIngredientsComponent({match}) {
   const history = useHistory();
+  const id = useSelector(state => state.user.id)
+
   if(id === null){
     history.push('/');
   }
