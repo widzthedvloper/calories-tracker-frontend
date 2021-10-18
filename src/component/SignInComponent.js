@@ -23,7 +23,7 @@ const SignInComponent = () => {
   const error = useSelector(state => state.user.error);
   
   if (error != null) {
-    errorElement = (<div><p style={{color: 'red', margin: '5px 5px 5px 0'}}>{error}</p></div>)
+    errorElement = (<div><p style={{color: 'white', margin: '5px 5px 5px 0', background: 'rgba(245, 39, 3, 0.5)', fontWeight: 'bold', borderRadius: '10px', padding: '0 5px'}}>{error}</p></div>)
   }
 
   if(id != null){
