@@ -19,6 +19,7 @@ const userReducer = (state = initialState, action) => {
         id: action.payload.id,
         email: action.payload.email,
         foods: action.payload.foods,
+        error: action.payload.error,
       };
     case 'SIGN-USER':
       return {

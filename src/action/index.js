@@ -3,7 +3,7 @@ import { logUser, createUser, getFoods } from '../API/api';
 const checkUser = (user) => async (dispatch) => {
   let payload = await logUser(user);
   if (payload === null) {
-    payload = { id: null, email: null, foods: [] };
+    payload = { id: null, email: null, foods: [] , error: 'Email not found!!!'};
   }
 
   dispatch(
