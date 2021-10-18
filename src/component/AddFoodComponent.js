@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useHistory, NavLink } from 'react-router-dom';
 import { createFood } from '../API/api';
+import { useDispatch } from 'react-redux';
 import '../style/footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { checkUser } from '../action';
 import { 
   faPlus,
   faChartLine,
@@ -14,9 +16,11 @@ import {
 
 const mapState = (state) => ({
   id: state.user.id,
+  email: state.user.email,
 });
-function AddFoodComponent({ id }) {
+function AddFoodComponent({ id, email }) {
   const history = useHistory();
+  const dispatch = useDispatch();
   if(id === null){
     history.push('/');
   }
@@ -27,6 +31,7 @@ function AddFoodComponent({ id }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     createFood(id, { name, user_id: id });
+    dispatch(checkUser({ email }));
     history.push('/App');
   };
   return (
@@ -89,7 +94,8 @@ function AddFoodComponent({ id }) {
 }
 
 AddFoodComponent.propTypes = {
-  id: PropTypes.number
+  id: PropTypes.number,
+  email: PropTypes.string,
 }
 
 export default connect(mapState)(AddFoodComponent);
