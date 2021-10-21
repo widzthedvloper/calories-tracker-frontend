@@ -89,6 +89,23 @@ const createIngredient = async (food_id, user_id, ingredient) => {
   return resp;
 };
 
+const getIngredients = async (food_id, user_id) => {
+  const resp = fetch(`${baseUrl}/users/${user_id}/foods/${food_id}/ingredients`, {
+    method: 'GET',
+    params: { id },
+    'headers': {
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => error.message);
+
+  return resp;
+};
+
 export {
-  logUser, createUser, getFoods, createFood, createIngredient,
+  logUser, createUser, getFoods, createFood, createIngredient, getIngredients
 };
