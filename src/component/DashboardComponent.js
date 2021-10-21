@@ -34,7 +34,7 @@ function DashboardComponent({
         <div className="meal-details">
           <span>Pasta</span>
           <br />
-          <NavLink className="footer-item" activeClassName="is-active" to={`/new/ingredient/${1}/${1}`}>
+          <NavLink className="footer-item" activeClassName="is-active" to="#">
             <span>Add ingredients</span>
           </NavLink>
         </div>

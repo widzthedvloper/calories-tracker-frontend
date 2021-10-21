@@ -92,7 +92,7 @@ const createIngredient = async (food_id, user_id, ingredient) => {
 const getIngredients = async (food_id, user_id) => {
   const resp = fetch(`${baseUrl}/users/${user_id}/foods/${food_id}/ingredients`, {
     method: 'GET',
-    params: { id },
+    params: {},
     'headers': {
       'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',

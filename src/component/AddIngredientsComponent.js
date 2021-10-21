@@ -1,20 +1,27 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory, NavLink } from 'react-router-dom';
 import { createIngredient } from '../API/api';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchIngredient } from '../action';
 import '../style/ingredient.css';
 
 function AddIngredientsComponent({match}) {
+  const dispatch = useDispatch()
   const history = useHistory();
-  const id = useSelector(state => state.user.id)
-
+  const id = useSelector(state => state.user.id);
+  const ingredients = useSelector(state => state.user.ingredients);
+  
   if(id === null){
     history.push('/');
   }
   const { user_id, food_id } = match.params;
   const [name, setName] = useState();
   const [calorie, setCalorie] = useState();
+  
+  useEffect(() => {
+    dispatch(fetchIngredient(food_id, user_id));
+  }, [])
 
   const grabName = (e) => {
     setName(e.target.value);

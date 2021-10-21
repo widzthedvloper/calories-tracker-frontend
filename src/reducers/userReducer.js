@@ -4,6 +4,7 @@ const initialState = {
   foods: [],
   calories: [],
   error: null,
+  ingredients: [],
 };
 
 const userReducer = (state = initialState, action) => {
@@ -12,6 +13,11 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         foods: action.payload,
+      };
+    case 'FETCH-INGREDIENT':
+      return {
+        ...state,
+        ingredients: action.payload,
       };
     case 'LOG-USER':
       return {
