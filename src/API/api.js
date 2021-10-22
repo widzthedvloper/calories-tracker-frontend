@@ -73,6 +73,7 @@ const createFood = async (id, food) => {
 };
 
 const createIngredient = async (food_id, user_id, ingredient) => {
+  console.log("get call");
   const resp = fetch(`${baseUrl}/users/${user_id}/foods/${food_id}/ingredients`, {
     method: 'POST',
     params: {},

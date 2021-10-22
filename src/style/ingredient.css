@@ -3,4 +3,48 @@
   border-radius: 10px;
   width: 100%;
 }
+
+.ingredients-container {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 10%;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  overflow: scroll;
+}
+
+.ingredients-container .meal {
+  -ms-flex-preferred-size: 300px;
+  flex-basis: 300px;
+  display: -webkit-box;
+  display: flex;
+  border: 2px solid #56baed;
+  margin: 2px;
+}
+
+.ingredients-container .meal .meal-icon {
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+}
+
+.ingredients-container .meal .meal-icon img {
+  width: 100px;
+  height: 100px;
+}
+
+.ingredients-container .meal .meal-details {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+}
+
+.form-confirmation {
+  position: relative;
+  top: -200px;
+}
 /*# sourceMappingURL=ingredient.css.map */

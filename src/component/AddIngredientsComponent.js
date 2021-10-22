@@ -4,6 +4,7 @@ import { useHistory, NavLink } from 'react-router-dom';
 import { createIngredient } from '../API/api';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchIngredient } from '../action';
+import foodLogo from '../img/food.png';
 import '../style/ingredient.css';
 
 function AddIngredientsComponent({match}) {
@@ -11,13 +12,12 @@ function AddIngredientsComponent({match}) {
   const history = useHistory();
   const id = useSelector(state => state.user.id);
   const ingredients = useSelector(state => state.user.ingredients);
-  
   if(id === null){
     history.push('/');
   }
   const { user_id, food_id } = match.params;
   const [name, setName] = useState();
-  const [calorie, setCalorie] = useState();
+  const [calories, setCalories] = useState();
   
   useEffect(() => {
     dispatch(fetchIngredient(food_id, user_id));
@@ -28,17 +28,54 @@ function AddIngredientsComponent({match}) {
   };
 
   const grabCalorie = (e) => {
-    setCalorie(e.target.value);
+    setCalories(e.target.value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     createIngredient(food_id, user_id, {
-      name, calorie, food_id, user_id,
+      name, calories, food_id, user_id,
     });
+    dispatch(fetchIngredient(food_id, user_id));
     history.push('/App');
   };
+
+  let foodIngredients = [];
+  foodIngredients = ingredients.filter(function(ingredient) {
+    return ingredient.food.id == food_id;
+  })
+  if (foodIngredients.length === 0 || ingredients.status === 500 || ingredients === null) {
+    foodIngredients = [[
+      <div className="meal" key={1}>
+        <div className="meal-icon">
+          <img src={foodLogo} alt="Ustensils logo" />
+        </div>
+        <div className="meal-details">
+          <span>Ingredient</span>
+          <br />
+          <span>Tomato</span>
+        </div>
+      </div>,
+    ]];
+  } else {
+    foodIngredients = foodIngredients.map((ingredient) => (
+      <div className="meal" key={ingredient.id}>
+        <div className="meal-icon">
+          <img src={foodLogo} alt="Ustensils logo" />
+        </div>
+        <div className="meal-details">
+          <span>Ingredient</span>
+          <br />
+          <span>{ingredient.name}</span>
+        </div>
+      </div>
+    ));
+  };
+
   return (
     <>
+      <div className="ingredients-container">
+        {foodIngredients}
+      </div>
       <div className="form-confirmation">
 
         <form onSubmit={handleSubmit}>
@@ -49,7 +86,7 @@ function AddIngredientsComponent({match}) {
           <br />
           <label htmlFor="calorie">
             Calorie
-            <input onChange={grabCalorie} id="calorie" type="number" className="calorie" placeholder="" value={calorie} />
+            <input onChange={grabCalorie} id="calorie" type="number" className="calorie" placeholder="" value={calories} />
           </label>
           <br />
           <button className="sign-in" type="submit">Add ingredient</button>
