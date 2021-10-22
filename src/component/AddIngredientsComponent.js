@@ -50,9 +50,9 @@ function AddIngredientsComponent({match}) {
           <img src={foodLogo} alt="Ustensils logo" />
         </div>
         <div className="meal-details">
-          <span>Ingredient</span>
+          <span> Default Ingredient</span>
           <br />
-          <span>Tomato</span>
+          <span>Watter</span>
         </div>
       </div>,
     ]];
@@ -76,7 +76,7 @@ function AddIngredientsComponent({match}) {
       <div className="ingredients-container">
         {foodIngredients}
       </div>
-      <div className="form-confirmation">
+      <div className="form-confirmation form-ingredient">
 
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">
