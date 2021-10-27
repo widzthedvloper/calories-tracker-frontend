@@ -1,0 +1,42 @@
+$PANTONE-MAIN: #56baed;
+
+.calorie {
+  padding-left: 5px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.ingredients-container {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  overflow: scroll;
+
+  .meal {
+    flex-basis: 300px;
+    display: flex;
+    border: 2px solid $PANTONE-MAIN;
+    margin: 2px;
+
+    .meal-icon {
+      flex-basis: 50%;
+
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    .meal-details {
+      align-self: center;
+    }
+  }
+}
+
+.form-confirmation {
+  position: relative;
+  top: -200px;
+}

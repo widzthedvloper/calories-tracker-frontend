@@ -1,0 +1,68 @@
+$PANTONE-MAIN: #56baed;
+$PANTINE-SECONDARY: #5b8092;
+$PANTONE-TERNARY: #97e493;
+
+.dash {
+  padding-top: 120px;
+  background-color: #fff;
+
+  .email-header {
+    text-align: center;
+    color: black;
+  }
+
+  .time {
+    margin: 10px;
+    text-align: center;
+  }
+
+  .measurement-total {
+    display: flex;
+    justify-content: space-around;
+    padding: 2%;
+
+    .meal-total,
+    .calorie-total {
+      border: 7px solid #ccc;
+      border-radius: 50%;
+      border-top: 7px solid $PANTONE-TERNARY;
+      border-right: 7px solid $PANTONE-TERNARY;
+      height: 100px;
+      width: 100px;
+      padding: 20px;
+      text-align: center;
+    }
+  }
+}
+
+.measurement-panel {
+  padding-bottom: 100px;
+  background-color: rgb(238, 232, 232);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .meal {
+    max-width: 45%;
+    background-color: white;
+    display: flex;
+    margin: 5% 0;
+
+    .meal-icon {
+      width: 40%;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .meal-details {
+      padding: 20% 0;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}
